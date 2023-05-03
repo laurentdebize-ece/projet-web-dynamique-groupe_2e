@@ -7,6 +7,10 @@
     <title>Document</title>
 </head>
 <body>
-    <p> je suis trop beau</p>
+<h1>Accueil</h1>
+
+<?php
+ include 'menu.php';
+ ?>
 </body>
 </html>

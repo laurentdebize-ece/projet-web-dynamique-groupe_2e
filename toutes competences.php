@@ -7,7 +7,10 @@
     <title>Document</title>
 </head>
 <body>
-    tatatotomachin
-    ert
+<h1>Toutes mes compétences</h1>
+
+<?php
+ include 'menu.php';
+ ?>
 </body>
 </html>

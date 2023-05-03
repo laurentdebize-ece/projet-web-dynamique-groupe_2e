@@ -7,7 +7,10 @@
     <title>Document</title>
 </head>
 <body>
-    <p>coucou
-    </p>
+<h1>Compétences transverses</h1>
+
+<?php
+ include 'menu.php';
+ ?>
 </body>
 </html>

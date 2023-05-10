@@ -7,16 +7,25 @@
     <title>Document</title>
 </head>
 <body>
+    
+    <h1>Omnes MySkill</h1>
+    <?php
+    include 'affichage.php'
+    ?>
+    <h2><?php echo $titre; ?></h2>
+    
+    <nav>
     <ul>
-        <li> <a href="accueil.php"> Accueil</a> </li>
+        <li> <a href="accueil.php"> Accueil   </a> </li>
         <li> <a href="matieres.php"> Matières</a> </li>
         <li> <a href="competences.php"> Compétences</a> </li>
         <li> <a href="competences trans.php"> Compétences transverses</a> </li>
         <li> <a href="toutes competences.php"> Toutes mes compétences</a> </li>
         <li> <a href="compte.php"> Mon compte</a> </li>
 
-
     </ul>
+    </nav>
+    
 </body>
 </html>
 

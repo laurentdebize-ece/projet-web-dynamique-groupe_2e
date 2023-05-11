@@ -13,7 +13,7 @@
  include 'menu.php';
  
  ?>
-<button onclick="window.location.href='index.php'">Deconnexion</button>
+<button onclick="window.location.href='deconnexion.php'">Deconnexion</button>
 
 </body>
 </html>

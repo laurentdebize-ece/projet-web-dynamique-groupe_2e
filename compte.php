@@ -11,7 +11,9 @@
 <body>
 <?php
  include 'menu.php';
+ 
  ?>
+<button onclick="window.location.href='index.php'">Deconnexion</button>
 
 </body>
 </html>

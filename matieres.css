@@ -1,0 +1,21 @@
+
+  #scrollcontainer {
+    height: 300px;
+    width: 90%;
+    overflow-x: scroll;
+    }
+    #containertrue{
+      width:2000px;
+    }
+    .Matiere {
+    margin-left: 5px;
+    width: 150px;
+    height: 250px;
+    float: left;
+    padding: 5px;
+    background-color:rgb(37, 130, 192);
+    border-radius: 3%;
+    }
+    .Matiere:hover{
+      background-color: rgb(7, 112, 182);
+    }

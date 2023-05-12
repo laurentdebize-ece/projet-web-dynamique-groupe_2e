@@ -10,9 +10,10 @@
 <body>
    <section>
        <h1> Connexion OMNESmySKILLS</h1>
-       <form action="traitementConnexion.php" method="POST">  
-           <label>Adresse Mail</label>
-           <input type="text" name="email">
+       <form action="traitementDejaConnecteUneFois.php" method="POST">  
+           <p>Bienvenue!</p>
+           <label >Entrer le mot de passe</label>
+           <input type="password" name="NVmdp2">
            <input type="submit" value="Valider" name="boutton-valider">
        </form>
    </section> 

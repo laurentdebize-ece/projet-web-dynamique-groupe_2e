@@ -20,24 +20,55 @@
 
     <div id="scrollcontainer">
         <div id="containertrue">
-            <div class="Matiere">
-                <p> Matière 1</p>
-            </div>
-            <div class="Matiere">
-                <p> Matière 2</p>
-            </div>
-            <div class="Matiere">
-                <p> Matière 3</p>
-            </div>
-            <div class="Matiere">
-                <p> Matière 4</p>
-            </div>
-            <div class="Matiere">
-                <p> Matière 5</p>
-            </div>
-            <div class="Matiere">
-                <p> Matière 6</p>
-            </div>
+            <a href="competences.php">
+                <div class="Matiere">
+                    <p> Matière 1</p>
+                </div>
+            </a>
+            <a href="competences.php">
+                <div class="Matiere">
+                    <p> Matière 2</p>
+                </div>
+            </a>
+            <a href="competences.php">
+                <div class="Matiere">
+                    <p> Matière 3</p>
+                </div>
+            </a>
+            <a href="competences.php">
+                <div class="Matiere">
+                    <p> Matière 4</p>
+                </div>
+            </a>
+            <a href="competences.php">
+                <div class="Matiere">
+                    <p> Matière 5</p>
+                </div>
+            </a>
+            <a href="competences.php">
+                <div class="Matiere">
+                    <p> Matière 6</p>
+                </div>
+            </a>
+            <a href="competences.php">
+                <div class="Matiere">
+                    <p> Matière 7</p>
+                </div>
+            </a>
+            <a href="competences.php">
+                <div class="Matiere">
+                    <p> Matière 8</p>
+                </div>
+            </a>
+            <a href="competences.php">
+                <div class="Matiere">
+                    <p> Matière 9</p>
+                </div>
+            </a>
+            <a href="competences.php">
+                <div class="Matiere">
+                    <p> Matière 10</p>
+                </div>
         </div>
 
     </div>

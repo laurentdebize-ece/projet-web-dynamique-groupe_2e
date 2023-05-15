@@ -1,7 +1,7 @@
 
   #scrollcontainer {
     height: 300px;
-    width: 90%;
+    width: 100%;
     overflow-x: scroll;
     }
     #containertrue{
@@ -15,6 +15,7 @@
     padding: 5px;
     background-color:rgb(37, 130, 192);
     border-radius: 3%;
+    color: black;
     }
     .Matiere:hover{
       background-color: rgb(7, 112, 182);

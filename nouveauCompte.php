@@ -11,6 +11,7 @@
    <section>
        <h1> Connexion OMNESmySKILLS</h1>
        <form action="traitementNouveauMDP.php" method="POST">  
+        
            <label >Créez Mot de Passe</label>
            <input type="password" name="NVmdp">
            <label >Confirmer le mot de passe</label>

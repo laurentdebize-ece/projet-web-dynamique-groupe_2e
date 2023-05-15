@@ -1,11 +1,13 @@
 <?php
 session_start();
-include("connexionBDD.php");
 
+include("connexionBDD.php");
+$utilisateur=$_SESSION['utilisateurs'];
 
 $mdp1 = isset($_POST["NVmdp"]) ? $_POST["NVmdp"] : "";
 $mdp2 = isset($_POST["NVmdp2"]) ? $_POST["NVmdp2"] : "";
 $email = $_SESSION["email"];
+
 # On vérifie qu'il n'y a pas d'erreur et que tous les champs sont remplis
 $erreur = "";
 
@@ -23,8 +25,18 @@ if ($erreur == "") {
 
         $num_rows_affected = $req->rowCount();
         if ($num_rows_affected > 0) {
-            header("Location: accueil.php");
-            exit();
+            if($utilisateur["rang"]==1){
+                echo "la scol";
+            }
+            else if($utilisateur["rang"]==2){
+                header("Location:accueilProf.php");
+                exit();
+            }
+            else if($utilisateur["rang"]==3){
+                header("Location:accueil.php");
+                exit();
+            }
+            
         } else {
             $erreur = "Erreur lors de la mise à jour du mot de passe.";
         }
@@ -36,4 +48,5 @@ if ($erreur == "") {
 if (!empty($erreur)) {
     echo "Une erreur est survenue : " . $erreur;
 }
+
 ?>

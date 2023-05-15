@@ -13,6 +13,7 @@
        <form action="traitementConnexion.php" method="POST">  
            <label>Adresse Mail</label>
            <input type="text" name="email">
+           <input type="hidden" name="mdp">
            <input type="submit" value="Valider" name="boutton-valider">
        </form>
    </section> 

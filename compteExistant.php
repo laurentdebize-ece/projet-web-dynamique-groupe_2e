@@ -13,7 +13,7 @@
        <form action="traitementDejaConnecteUneFois.php" method="POST">  
            <p>Bienvenue!</p>
            <label >Entrer le mot de passe</label>
-           <input type="password" name="NVmdp2">
+           <input type="password" name="ACmdp">
            <input type="submit" value="Valider" name="boutton-valider">
        </form>
    </section> 

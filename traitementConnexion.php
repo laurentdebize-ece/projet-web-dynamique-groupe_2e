@@ -18,7 +18,7 @@ else{
 #que les identifiants correspondent à ceux de notre base de donne
 
 
-$db_handle = mysqli_connect('localhost', 'root', 'root' );
+$db_handle = mysqli_connect('localhost', 'root', '' );
 $db_found = mysqli_select_db($db_handle, "bdece");
 
 if ($db_found){

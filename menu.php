@@ -8,7 +8,7 @@
 </head>
 <body>
     
-    <h1>Omnes MySkill</h1>
+    <h1>Omnes MySkills</h1>
     <?php
     include 'affichage.php'
     ?>
@@ -23,8 +23,11 @@
         <li> <a href="toutes competences.php"> Toutes mes compétences</a> </li>
         <li> <a href="compte.php"> Mon compte</a> </li>
 
+
     </ul>
     </nav>
+
+    
     
 </body>
 </html>

@@ -27,7 +27,12 @@
         break;
     case "toutes competences.php":
         $titre = "Toutes mes compétences";
-        break;        
+        break;
+    case "evaluer.php":
+          $titre = "Evaluer mes compétences";
+          break; 
+               
+
     // Ajoute d'autres pages et titres si nécessaire
     default:
       $titre = "Mon site";

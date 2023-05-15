@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,25 +9,74 @@
     <link rel="stylesheet" type="text/css" href="style_footer.css">
 
 
-    <title>Document</title>
+    <title>Matieres</title>
+    <link rel=" stylesheet " href="matieres.css">
+
 </head>
+
 <body>
-<?php
- include 'menu.php';
- ?>
-<form method="POST" action="evaluer.php">
-		<label for="matiere">Sélectionnez une matière:</label>
-		<select name="matiere" id="matiere">
-			<option value="1">Mathématiques</option>
-			<option value="francais">Français</option>
-			<option value="histoire">Histoire</option>
-			<!-- Ajouter d'autres options ici -->
-		</select>
-		<br><br>
-		<input type="submit" value="Valider">
-	</form>
-<?php
-include 'footer.php';
-?>
+    <?php
+    include 'menu.php';
+    ?>
+
+
+    <div id="scrollcontainer">
+        <div id="containertrue">
+            <a href="competences.php">
+                <div class="Matiere">
+                    <p> Matière 1</p>
+                </div>
+            </a>
+            <a href="competences.php">
+                <div class="Matiere">
+                    <p> Matière 2</p>
+                </div>
+            </a>
+            <a href="competences.php">
+                <div class="Matiere">
+                    <p> Matière 3</p>
+                </div>
+            </a>
+            <a href="competences.php">
+                <div class="Matiere">
+                    <p> Matière 4</p>
+                </div>
+            </a>
+            <a href="competences.php">
+                <div class="Matiere">
+                    <p> Matière 5</p>
+                </div>
+            </a>
+            <a href="competences.php">
+                <div class="Matiere">
+                    <p> Matière 6</p>
+                </div>
+            </a>
+            <a href="competences.php">
+                <div class="Matiere">
+                    <p> Matière 7</p>
+                </div>
+            </a>
+            <a href="competences.php">
+                <div class="Matiere">
+                    <p> Matière 8</p>
+                </div>
+            </a>
+            <a href="competences.php">
+                <div class="Matiere">
+                    <p> Matière 9</p>
+                </div>
+            </a>
+            <a href="competences.php">
+                <div class="Matiere">
+                    <p> Matière 10</p>
+                </div>
+        </div>
+
+    </div>
+
+
+
 </body>
+
 </html>

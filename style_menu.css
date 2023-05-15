@@ -18,9 +18,13 @@ nav ul{
 
 nav li{
     float: left;
+    border-left: 1px solid rgba(0, 4, 255, 50);
+    border-right: 1px solid rgba(0, 4, 255, 50);
     width: 16.66%;/*100% divisé par le nombre d'éléments de menu*/
     text-align: center;/*Centre le texte dans les éléments de menu*/
 }
+
+
 
 /*Evite que le menu n'ait une hauteur nulle*/
 nav ul::after{
@@ -31,15 +35,17 @@ nav ul::after{
 
 nav a{
     display: block; /*Toute la surface sera cliquable*/
-    text-decoration: none;
+    text-decoration:none;
+    text-align: center;
     color: black;
     border-bottom: 2px solid transparent;/*Evite le décalage des éléments sous le menu à cause de la bordure en :hover*/
     padding: 10px 0px;/*Agrandit le menu et espace la bordure du texte*/
-}
+  }
 
 nav a:hover{
-    color: rgb(0, 94, 255);
-    border-bottom: 2px solid rgb(0, 4, 255);
+    color: rgb(0, 0, 0);
+    text-decoration:none;
+    border-bottom: 2px solid rgb(0, 0, 0);
 }
 
 .conteneur{
@@ -56,16 +62,20 @@ h1 {
   font-family: 'Poppins', sans-serif;
   font-weight: 70;
   font-size: 5rem;
-  text-align: left;
+  text-align: center;
   color: #fff;
   text-shadow: 4px 4px 8px rgba(0, 0, 0, 0,2);
   margin-top: 10px;
   transition: background-color 0.5s ease;
   padding: 20px;
-  background-color: #20496c;
-  border-top: 10px solid #083458;
-  border-bottom: 10px solid #083458;
-  text-decoration: underline #828d96
+  background-color: #190039;
+  border-top: 10px solid #190039;
+  border-bottom: 10px solid #190039;
+  text-decoration: none;
+}
+
+#titre {
+  color : white;
 }
 
 /* Effet de transition au survol du titre */
@@ -81,11 +91,9 @@ h1:hover {
     font-family: 'Poppins', sans-serif;
     font-weight: 600;
     font-size: 3rem;
-    text-align: left;
-    color: #20496c;
+    text-align: center;
+    color: black;
     margin-top: 50px;
     margin-bottom: 30px;
+    margin-left: 25px;
     }
-
-    
-          

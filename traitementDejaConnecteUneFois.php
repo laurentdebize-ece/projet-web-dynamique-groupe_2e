@@ -10,7 +10,7 @@ $mdpExistant = isset($_POST["ACmdp"]) ? $_POST["ACmdp"] : "";
 $req=$bdd->prepare("SELECT mdp FROM utilisateurs WHERE mail= :email");
 $params = array('email'=> $email);
 $req->execute($params);
-if($mdpEntrer==$utilisateur['mdp']){
+if($mdpExistant==$utilisateur['mdp']){
     header("Location:accueil.php");
 }else{
     echo "Le mot de passe est incorrect";

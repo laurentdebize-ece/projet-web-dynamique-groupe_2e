@@ -10,8 +10,16 @@ $mdpExistant = isset($_POST["ACmdp"]) ? $_POST["ACmdp"] : "";
 $req=$bdd->prepare("SELECT mdp FROM utilisateurs WHERE mail= :email");
 $params = array('email'=> $email);
 $req->execute($params);
-if($mdpExistant==$utilisateur['mdp']){
+if($utilisateur["rang"]==1){
+    echo "la scol";
+}
+else if($utilisateur["rang"]==2){
+    header("Location:accueilProf.php");
+    exit();
+}
+else if($utilisateur["rang"]==3){
     header("Location:accueil.php");
+    exit();
 }else{
     echo "Le mot de passe est incorrect";
 }

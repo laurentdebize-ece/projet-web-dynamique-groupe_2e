@@ -1,0 +1,24 @@
+footer {
+    position: relative;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #20496c;
+    color: #fff;
+    padding: 20px;
+    font-size: 1.2rem;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    
+   
+  }
+  
+  footer a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  footer a:hover {
+    color: #1abc9c;
+  }

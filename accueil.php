@@ -14,39 +14,10 @@
 <?php
  include 'menu.php';
  ?>
-<p>t <br></p>
-<p>t <br></p>
-<p>t <br></p>
-<p>t <br></p>
-<p>t <br></p>
-<p>t <br></p>
-<p>t <br></p>
-<p>t <br></p>
-<p>t <br></p>
-<p>t <br></p>
-<p>t <br></p>
-<p>t <br></p>
-<p>t <br></p>
-<p>t <br></p>
-<p>t <br></p>
-<p>t <br></p>
-<p>t <br></p>
-<p>t <br></p>
-<p>t <br></p>
-<p>t <br></p>
-<p>t <br></p>
-<p>t <br></p>
-<p>t <br></p>
-<p>t <br></p>
-<p>t <br></p>
-<p>t <br></p>
-<p>t <br></p>
-<p>t <br></p>
-<p>t <br></p>
-<p>t <br></p>
 
+
+</body>
 <?php
 include 'footer.php';
 ?>
-</body>
 </html>

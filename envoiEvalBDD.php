@@ -1,5 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style_menu.css">
+    <link rel="stylesheet" type="text/css" href="style_footer.css">
+    <title>Document</title>
+</head>
+<body>
+    <?php
+    include 'menu.php'
+    ?>
 <?php
 session_start();
+
 
 try {
     $bdd = new PDO('mysql:host=localhost;dbname=bdece;charset=utf8', 'root', '', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
@@ -7,6 +22,8 @@ try {
 } catch (Exception $e) {
     die('Erreur : ' . $e->getMessage());
 }
+
+
 
 $eval = isset($_POST["eval"]) ? $_POST["eval"] : "";
 $matiere = isset($_POST["matiere"]) ? $_POST["matiere"] : "";
@@ -30,8 +47,25 @@ $stmt->bindParam(':idMatiere', $matiere);
 $stmt->bindParam(':idCompetence', $competence);
 
 if ($stmt->execute()) {
-    echo "La valeur d'évaluation a été mise à jour avec succès.";
+    echo "<form action='evaluer.php' method='POST'>";
+    echo "<input type='hidden' name='matiere' value='$matiere'>";
+    echo "L'évaluation de la competence a bien été enregistrée";
+    echo "<input type='submit' value='Revenir à la page des compétences'>";
+    echo "</form>";
+
+
+
 } else {
     echo "Erreur lors de la mise à jour de la valeur d'évaluation.";
+    echo "<form action='evaluer.php' method='POST'>";
+    echo "<input type='hidden' name='matiere' value='$matiere'>";
+    echo "<input type='submit' value='Revenir à la page des compétences'>";
+    echo "</form>";
 }
 ?>
+
+</body>
+</html>
+
+
+

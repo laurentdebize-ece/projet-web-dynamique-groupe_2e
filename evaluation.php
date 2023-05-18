@@ -34,21 +34,21 @@ foreach ($result as $row) {
     echo "<input type='hidden' name='matiere' value='$matiere'>";
 
     if ($idEval == 1) {
-        echo "<input type='radio' name='eval' value='acquis' checked> Acquis ";
+        echo "<input type='radio' name='eval' value='1' checked> Acquis ";
     } else {
-        echo "<input type='radio' name='eval' value='acquis'> Acquis ";
+        echo "<input type='radio' name='eval' value='1'> Acquis ";
     }
 
     if ($idEval == 2) {
-        echo "<input type='radio' name='eval' value='en_cours' checked> En cours ";
+        echo "<input type='radio' name='eval' value='2' checked> En cours ";
     } else {
-        echo "<input type='radio' name='eval' value='en_cours'> En cours ";
+        echo "<input type='radio' name='eval' value='2'> En cours ";
     }
 
     if ($idEval == 3) {
-        echo "<input type='radio' name='eval' value='non_acquis' checked> Non acquis ";
+        echo "<input type='radio' name='eval' value='3' checked> Non acquis ";
     } else {
-        echo "<input type='radio' name='eval' value='non_acquis'> Non acquis ";
+        echo "<input type='radio' name='eval' value='3'> Non acquis ";
     }
 
     echo "<input type='submit' value='Enregistrer'>";

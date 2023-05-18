@@ -22,9 +22,12 @@
 
     <div id="scrollcontainer">
         <div id="containertrue">
-            <a href="competences.php">
-                <div class="Matiere">
-                    <p> Matière 1</p>
+        <form action="evaluer.php" method="POST">
+            <input type="hidden" name="matiere" value="1">
+            <button type="submit" class="Matiere">
+                <p> Mathématiques</p>
+            </button>
+        </form>
                 </div>
             </a>
             <a href="competences.php">

@@ -11,7 +11,8 @@ $req=$bdd->prepare("SELECT mdp FROM utilisateurs WHERE mail= :email");
 $params = array('email'=> $email);
 $req->execute($params);
 if($utilisateur["rang"]==1){
-    echo "la scol";
+    header("Location:accueilAdmin.php");
+    exit();
 }
 else if($utilisateur["rang"]==2){
     header("Location:accueilProf.php");

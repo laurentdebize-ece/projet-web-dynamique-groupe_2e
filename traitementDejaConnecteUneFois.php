@@ -15,7 +15,7 @@ $req->execute($params);
 
 
 if($utilisateur["rang"]==1){
-    header("Location:accueil.php");
+    header("Location:accueilAdmin.php");
     exit();
 }
 else if($utilisateur["rang"]==2){

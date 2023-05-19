@@ -19,16 +19,16 @@
     <div class="container-fluid">
             <div class="row">
                 <div class="col-sm-3">
-                    <a href="accueil.php"> Accueil </a>
+                    <a href="accueilProfs.php"> Accueil </a>
                 </div>
                 <div class="col-sm-3">
-                    <a href="competences.php"> Compétences </a>
+                    <a href="competencesProfs.php"> Compétences </a>
                 </div>
                 <div class="col-sm-3">
                     <a href="classesProfs.php"> Mes classes </a>
                 </div>
                 <div class="col-sm-3">
-                    <a id="lastright" href="compte.php"> Mon compte </a>
+                    <a id="lastright" href="compteProfs.php"> Mon compte </a>
                 </div>
             </div>
         </div>

@@ -37,6 +37,21 @@
     case "evaluer.php":
           $titre = "Evaluer mes compétences";
           break; 
+    case "profsAdmin.php":
+          $titre = "Gestion des profs";
+          break; 
+    case "classesAdmin.php":
+          $titre = "Gestion des classes";
+          break; 
+    case "matieresAdmin.php":
+          $titre = "Gestion des matières";
+          break; 
+    case "competencesAdmin.php":
+          $titre = "Gestion des compétences";
+          break;
+    case "compteAdmin.php":
+          $titre = "Mon compte";
+          break; 
     
                
 

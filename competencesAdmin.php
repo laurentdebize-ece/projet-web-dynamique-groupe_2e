@@ -42,17 +42,17 @@ $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
         ?>
     </table>
     </div> <br>
-    
-    <form>
-    Modifier la base de données : <br>
-    Nom de la compétence :<br>
-    <input type="text" /> <br>
-    Nom de la matière : <br>
-    <input type="text" /> <br>
-    <button>Supprimer une compétence</button> <br>
-    <button>Ajouter une compétence</button> <br>
-    </form>
 
+    <form method="post" action="ajoutSuppElements.php">
+        <p>
+            <label for="prenom">Nom de la compétence : </label> <br>
+            <input type="text" name="nomCompetence" id="nomCompetence"> <br>
+            <label for="nom">Nom de la matière : </label> <br>
+            <input type="text" name="nom" id="nom"> <br>
+            <input type="submit" value="Ajouter la compétence"> <br>
+            <input type="submit" value="Supprimer la compétence"> <br>
+        </p>
+    </form>
 
 </body>
 <?php

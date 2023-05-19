@@ -15,15 +15,16 @@
  include 'menuAdmin.php';
 ?>
 
-<form>
-    Nom de la classe <br>
-    <input type="text" /> <br>
-    <input type="text" /> <br>
-</form>
-
-<button>Ajouter une classe</button>
-<button>Supprimer une classe</button>
-
+    <form method="post" action="ajoutSuppElements.php">
+        <p>
+            <label for="prenom">Nom de la classe : </label> <br>
+            <input type="text" name="nomClasse" id="nomClasse"> <br>
+            <label for="nom">Nom de la promo de la classe : </label> <br>
+            <input type="text" name="nomPromo" id="nomPromo"> <br>
+            <input type="submit" value="Ajouter la classe"> <br>
+            <input type="submit" value="Supprimer la classe"> <br>
+        </p>
+    </form>
 
 <?php
 include 'footer.php';

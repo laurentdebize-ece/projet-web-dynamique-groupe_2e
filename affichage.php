@@ -13,6 +13,12 @@
     case "accueil.php":
       $titre = "Page d'accueil";
       break;
+    case "accueilProf.php":
+      $titre = "Page d'accueil";
+      break;
+    case "accueilAdmin.php":
+      $titre = "Page d'accueil";
+      break;
     case "competences.php":
       $titre = "Mes compétences";
       break;
@@ -31,6 +37,7 @@
     case "evaluer.php":
           $titre = "Evaluer mes compétences";
           break; 
+    
                
 
     // Ajoute d'autres pages et titres si nécessaire

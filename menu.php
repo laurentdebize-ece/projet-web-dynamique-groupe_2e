@@ -11,10 +11,12 @@
 </head>
 <body>
     <a id="titre" href="accueil.php"><h1>OMNES MySkill</h1></a>
+    
     <?php
     include 'affichage.php'
     ?>
-    <h2><?php echo $titre; ?></h2>
+
+<h2><?php echo $titre; ?></h2>
     
     <nav>
         <div class="container-fluid">
@@ -42,8 +44,6 @@
     </div>
     </nav>
 
-    
-    
 </body>
 </html>
 

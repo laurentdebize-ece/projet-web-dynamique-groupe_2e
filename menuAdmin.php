@@ -18,16 +18,22 @@
     <nav>
     <div class="container-fluid">
             <div class="row">
-                <div class="col-sm-3">
-                    <a href="accueil.php"> Accueil </a>
+                <div class="col-sm-2">
+                    <a href="accueilAdmin.php"> Accueil </a>
                 </div>
-                <div class="col-sm-3">
-                    <a href="competences.php"> Compétences </a>
+                <div class="col-sm-2">
+                    <a href="profsAdmin.php"> Profs </a>
                 </div>
-                <div class="col-sm-3">
-                    <a href="classesProfs.php"> Mes classes </a>
+                <div class="col-sm-2">
+                    <a href="matieresAdmin.php"> Matières </a>
                 </div>
-                <div class="col-sm-3">
+                <div class="col-sm-2">
+                    <a href="classesAdmin.php"> Classes </a>
+                </div>
+                <div class="col-sm-2">
+                    <a href="competencesAdmin.php"> Compétences </a>
+                </div>
+                <div class="col-sm-2">
                     <a id="lastright" href="compte.php"> Mon compte </a>
                 </div>
             </div>

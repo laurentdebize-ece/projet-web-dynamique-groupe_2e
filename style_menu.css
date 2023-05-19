@@ -12,33 +12,11 @@ nav{
     top: 0px;
 }
 
-nav ul{
-    list-style-type: none;
-}
-
-nav li{
-    float: left;
-    border-left: 1px solid rgba(0, 4, 255, 50);
-    border-right: 1px solid rgba(0, 4, 255, 50);
-    width: 16.66%;/*100% divisé par le nombre d'éléments de menu*/
-    text-align: center;/*Centre le texte dans les éléments de menu*/
-}
-
-
-
-/*Evite que le menu n'ait une hauteur nulle*/
-nav ul::after{
-    content: "";
-    display: table;
-    clear: both;
-}
-
 nav a{
     display: block; /*Toute la surface sera cliquable*/
     text-decoration:none;
     text-align: center;
     color: black;
-    border-bottom: 2px solid transparent;/*Evite le décalage des éléments sous le menu à cause de la bordure en :hover*/
     padding: 10px 0px;/*Agrandit le menu et espace la bordure du texte*/
   }
 
@@ -59,6 +37,8 @@ nav a:hover{
 
 /* Style pour le titre de la page */
 h1 {
+  position: absolute;
+  top: 0;
   font-family: 'Poppins', sans-serif;
   font-weight: 70;
   font-size: 5rem;
@@ -88,6 +68,7 @@ h1:hover {
 
 
   h2 {
+    position: absolute;
     font-family: 'Poppins', sans-serif;
     font-weight: 600;
     font-size: 3rem;

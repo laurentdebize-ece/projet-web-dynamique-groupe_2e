@@ -13,6 +13,12 @@
     case "accueil.php":
       $titre = "Page d'accueil";
       break;
+    case "accueilProf.php":
+      $titre = "Page d'accueil";
+      break;
+    case "accueilAdmin.php":
+      $titre = "Page d'accueil";
+      break;
     case "competences.php":
       $titre = "Mes compétences";
       break;

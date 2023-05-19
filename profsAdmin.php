@@ -45,8 +45,16 @@ $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
     </table>
     </div>
 
-    <button>Supprimer un/une prof</button>
-    <button>Ajouter un/une prof</button>
+    <form method="post" action="ajoutSuppElements.php">
+        <p>
+            <label for="prenom">Nom prof : </label> <br>
+            <input type="text" name="nom" id="nom"> <br>
+            <label for="nom">Prénom prof : </label> <br>
+            <input type="text" name="prenom" id="prenom"> <br>
+            <input type="submit" value="Ajouter prof"> <br>
+            <input type="submit" value="Supprimer prof"> <br>
+        </p>
+    </form>
 
 </html>
 

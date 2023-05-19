@@ -43,8 +43,14 @@ $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
     </table>
     </div>
 
-    <button>Supprimer une matières</button>
-    <button>Ajouter une matières</button>
+    <form method="post" action="ajoutSuppElements.php">
+        <p>
+            <label for="nom">Nom de la matière : </label> <br>
+            <input type="text" name="nom" id="nom"> <br>
+            <input type="submit" value="Ajouter la matière"> <br>
+            <input type="submit" value="Supprimer la matière"> <br>
+        </p>
+    </form>
 
 </html>
 </body>

@@ -15,7 +15,7 @@
  include 'menuAdmin.php';
  include 'connexionBDD.php';
 // Fetch data from the database
-$sql = "SELECT * FROM matieres";
+$sql = "SELECT * FROM utilisateurs WHERE rang=2";
 $stmt = $bdd->prepare($sql);
 $stmt->execute();
 $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -25,7 +25,8 @@ $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <table>
         <tr>
             <th>Nom</th>
-            <th>Nb heures</th>
+            <th>Prénom</th>
+            <th>Email</th>
         </tr>
         <?php
         if (count($result) > 0) {
@@ -33,7 +34,8 @@ $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
             foreach ($result as $row) {
                 echo "<tr>";
                 echo "<td>".$row["nom"]."</td>";
-                echo "<td>".$row["NbHeures"]."</td>";
+                echo "<td>".$row["prenom"]."</td>";
+                echo "<td>".$row["mail"]."</td>";
                 echo "</tr>";
             }
         } else {
@@ -43,10 +45,11 @@ $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
     </table>
     </div>
 
-    <button>Supprimer une matières</button>
-    <button>Ajouter une matières</button>
+    <button>Supprimer un/une prof</button>
+    <button>Ajouter un/une prof</button>
 
 </html>
+
 </body>
 <?php
 include 'footer.php';

@@ -45,12 +45,13 @@ $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
     <form method="post" action="ajoutSuppElements.php">
         <p>
-            <label for="prenom">Nom de la compétence : </label> <br>
-            <input type="text" name="nomCompetence" id="nomCompetence"> <br>
-            <label for="nom">Nom de la matière : </label> <br>
-            <input type="text" name="nom" id="nom"> <br>
-            <input type="submit" value="Ajouter la compétence"> <br>
-            <input type="submit" value="Supprimer la compétence"> <br>
+        Modifier la base de données : <br>
+            <label for="prenom">Nom de la compétence : </label> 
+            <input type="text" name="nomCompetence" id="nomCompetence"> 
+            <label for="nom">Nom de la matière : </label> 
+            <input type="text" name="nom" id="nom"> 
+            <input type="submit" value="Ajouter la compétence"> 
+            <input type="submit" value="Supprimer la compétence"> 
         </p>
     </form>
 

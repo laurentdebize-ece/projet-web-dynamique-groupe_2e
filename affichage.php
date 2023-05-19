@@ -33,7 +33,25 @@
           break;
     case "envoiEvalBDD.php":
         $titre = "Confirmation enregistrement";
-        break;      
+        break;
+      case "accueilProfs.php":
+          $titre = "Accueil";
+          break; 
+      case "compteProfs.php":
+          $titre = "Mon compte";
+          break;
+      case "classesProfs.php":
+          $titre = "Mes classes";
+          break;   
+      case "competencesProfs.php":
+          $titre = "Compétences";
+          break;
+      case "voirCompetencesProfs.php":
+          $titre = "Voir les compétences";
+          break;
+      case "ajouterCompetencesProfs.php":
+          $titre = "Ajouter une compétences";
+          break;          
                
 
     // Ajoute d'autres pages et titres si nécessaire

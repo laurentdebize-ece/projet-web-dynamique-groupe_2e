@@ -10,7 +10,7 @@
 </head>
 <body>
 <?php
- include 'menuProf.php';
+ include 'menuProfs.php';
  ?>
 
 

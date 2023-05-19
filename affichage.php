@@ -36,7 +36,7 @@
         break;
     case "evaluer.php":
           $titre = "Evaluer mes compétences";
-          break; 
+          break;
     case "profsAdmin.php":
           $titre = "Gestion des profs";
           break; 
@@ -52,7 +52,9 @@
     case "compteAdmin.php":
           $titre = "Mon compte";
           break; 
-    
+    case "envoiEvalBDD.php":
+        $titre = "Confirmation enregistrement";
+        break;      
                
 
     // Ajoute d'autres pages et titres si nécessaire

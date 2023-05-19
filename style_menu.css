@@ -126,3 +126,10 @@ h1:hover {
     margin: 4px 2px;
     cursor: pointer;
   }
+
+  .formModif {
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 2%;
+    margin-bottom: 21%;
+  }

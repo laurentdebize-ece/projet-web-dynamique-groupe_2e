@@ -45,6 +45,8 @@ $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
     </table>
     </div>
 
+
+    <div class="formModif">
     <form method="post" action="ajoutSuppElements.php">
         <p>
         Modifier la base de données : <br>
@@ -56,6 +58,7 @@ $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
             <input type="submit" value="Supprimer prof"> 
         </p>
     </form>
+    </div>
 
 </html>
 

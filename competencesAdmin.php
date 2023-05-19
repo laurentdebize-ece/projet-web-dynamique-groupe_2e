@@ -43,6 +43,7 @@ $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
     </table>
     </div> <br>
 
+    <div class="formModif">
     <form method="post" action="ajoutSuppElements.php">
         <p>
         Modifier la base de données : <br>
@@ -54,6 +55,7 @@ $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
             <input type="submit" value="Supprimer la compétence"> 
         </p>
     </form>
+    </div>
 
 </body>
 <?php

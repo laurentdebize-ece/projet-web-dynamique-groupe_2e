@@ -43,15 +43,17 @@ $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
     </table>
     </div>
 
-    <form method="post" action="ajoutSuppElements.php">
-        <p>
-            Modifier la base de données : <br>
-            <label for="nom">Nom de la matière : </label> 
-            <input type="text" name="nom" id="nom"> 
-            <input type="submit" value="Ajouter la matière"> 
-            <input type="submit" value="Supprimer la matière"> 
-        </p>
-    </form>
+    <div class="formModif">
+        <form method="post" action="ajoutSuppElements.php">
+            <p>
+                Modifier la base de données : <br>
+                <label for="nom">Nom de la matière : </label> 
+                <input type="text" name="nom" id="nom"> 
+                <input type="submit" value="Ajouter la matière"> 
+                <input type="submit" value="Supprimer la matière"> 
+            </p>
+        </form>
+    </div>
 
 </html>
 </body>

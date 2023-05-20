@@ -19,7 +19,7 @@
     <div class="container-fluid">
             <div class="row">
                 <div class="col-sm-3">
-                    <a href="accueilProf.php"> Accueil </a>
+                    <a href="accueilProfs.php"> Accueil </a>
                 </div>
                 <div class="col-sm-3">
                     <a href="competencesProfs.php"> Compétences </a>

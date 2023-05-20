@@ -19,7 +19,7 @@
     <div class="container-fluid">
             <div class="row">
                 <div class="col-sm-3">
-                    <a href="accueilProfs.php"> Accueil </a>
+                    <a href="accueilProf.php"> Accueil </a>
                 </div>
                 <div class="col-sm-3">
                     <a href="competencesProfs.php"> Compétences </a>
@@ -28,7 +28,7 @@
                     <a href="classesProfs.php"> Mes classes </a>
                 </div>
                 <div class="col-sm-3">
-                    <a id="lastright" href="compteProfs.php"> Mon compte </a>
+                    <a href="compteProfs.php"> Mon compte </a>
                 </div>
             </div>
         </div>

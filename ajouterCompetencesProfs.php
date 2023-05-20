@@ -1,4 +1,18 @@
-<?php
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style_menu.css">
+    <link rel="stylesheet" type="text/css" href="style_footer.css">
+    <title>Document</title>
+</head>
+<body>
+    <?php
+    include "menu.php";
+    ?>
+    <?php
 session_start();
 include("connexionBDD.php");
 
@@ -27,15 +41,27 @@ if ($stmt->execute()) {
     while ($row = $stmtEtudiants->fetch(PDO::FETCH_ASSOC)) {
         $idEtudiant = $row['idUtilisateur'];
 
-        $sqlInsertEtudiants = "INSERT INTO competences_etudiants (idCompetence, idEtudiant) VALUES (:idCompetence, :idEtudiant)";
+        $sqlInsertEtudiants = "INSERT INTO competences (idCompetence, nomCompetence, idMatiere,idEval , idUtilisateur) VALUES (NULL, :nomCompetence, :idMatiere, 0, :idEtudiant)";
         $stmtInsertEtudiants = $bdd->prepare($sqlInsertEtudiants);
-        $stmtInsertEtudiants->bindParam(':idCompetence', $idCompetence);
+        $stmtInsertEtudiants->bindParam(':nomCompetence', $nomCompetence);
+        $stmtInsertEtudiants->bindParam(':idMatiere', $idMatiere);
         $stmtInsertEtudiants->bindParam(':idEtudiant', $idEtudiant);
+
         $stmtInsertEtudiants->execute();
     }
 
-    echo "La compétence a été ajoutée avec succès et associée à tous les étudiants de la classe.";
+    if ($stmtInsertEtudiants->execute()) {
+        echo "<form action='competencesProfs.php' method='post'>";
+        echo "La compétence a été ajoutée avec succès et associée à tous les étudiants de la classe.";
+        echo "<input type='submit' value='Revenir à la page des compétences'>";
+
+        echo "</form>";
+    }
 } else {
     echo "Erreur lors de l'ajout de la compétence.";
 }
 ?>
+
+</body>
+</html>
+

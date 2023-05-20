@@ -5,8 +5,6 @@
 }
 
 nav{
-  width: 100%;
-  margin: 0px auto 100px auto;
   background-color: white;
   position: sticky;
   top: 0px;
@@ -82,7 +80,7 @@ h1:hover {
       margin-right:5%;
       width: 90%;
       text-align: left;
-      border: 1px solid;
+      border: none;
   }
 
   th, td {
@@ -132,4 +130,9 @@ h1:hover {
     margin-right: 5%;
     margin-top: 2%;
     margin-bottom: 21%;
+  }
+
+  p .infoCompte {
+    margin-left: 50%;
+    margin-right: auto;
   }

@@ -54,8 +54,8 @@ $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
             <input type="text" name="nom" id="nom"> 
             <label for="nom">Prénom prof : </label> 
             <input type="text" name="prenom" id="prenom"> 
-            <input type="submit" value="Ajouter prof"> 
-            <input type="submit" value="Supprimer prof"> 
+            <input type="submit" value="Ajouter professeur/e"> 
+            <input type="submit" value="Supprimer professeur/e"> 
         </p>
     </form>
     </div>

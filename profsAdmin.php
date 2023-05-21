@@ -45,16 +45,20 @@ $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
     </table>
     </div>
 
+
+    <div class="formModif">
     <form method="post" action="ajoutSuppElements.php">
         <p>
-            <label for="prenom">Nom prof : </label> <br>
-            <input type="text" name="nom" id="nom"> <br>
-            <label for="nom">Prénom prof : </label> <br>
-            <input type="text" name="prenom" id="prenom"> <br>
-            <input type="submit" value="Ajouter prof"> <br>
-            <input type="submit" value="Supprimer prof"> <br>
+        Modifier la base de données : <br>
+            <label for="prenom">Nom prof : </label> 
+            <input type="text" name="nom" id="nom"> 
+            <label for="nom">Prénom prof : </label> 
+            <input type="text" name="prenom" id="prenom"> 
+            <input type="submit" value="Ajouter professeur/e"> 
+            <input type="submit" value="Supprimer professeur/e"> 
         </p>
     </form>
+    </div>
 
 </html>
 

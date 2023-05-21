@@ -5,8 +5,6 @@
 }
 
 nav{
-  width: 100%;
-  margin: 0px auto 100px auto;
   background-color: white;
   position: sticky;
   top: 0px;
@@ -77,11 +75,12 @@ h1:hover {
     }
 
     table {
+      overflow: auto;
       margin-left:5%;
       margin-right:5%;
       width: 90%;
       text-align: left;
-      border: 1px solid;
+      border: none;
   }
 
   th, td {
@@ -96,6 +95,44 @@ h1:hover {
 
   tr:nth-child(even) {background-color: #f2f2f2;}
 
-  button {
+  form {
+    overflow: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    }
+
+  input[type=text] {
+    border: none;
+    border-bottom: 2px solid #190039;
+    color: white;
+  }
+
+  input[type=text]:focus {
+    outline: none;
+    padding: 4px 5px;
+    background-color: #190039;
+    margin: 4px 2px;
+  }
+
+  input[type=button], input[type=submit] {
+    background-color: #190039;
+    border: none;
+    color: white;
+    padding: 5px 5px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
+
+  .formModif {
     margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 2%;
+    margin-bottom: 21%;
+  }
+
+  p .infoCompte {
+    margin-left: 50%;
+    margin-right: auto;
   }

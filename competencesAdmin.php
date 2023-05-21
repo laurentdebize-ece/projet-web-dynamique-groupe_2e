@@ -43,7 +43,8 @@ $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
     </table>
     </div> <br>
 
-    <form action="ajoutSuppElements.php" method="POST" >
+    <div class="formModif">
+    <form method="post" action="ajoutSuppElements.php">
         <p>
             <label for="prenom">Nom de la compétence : </label> <br>
             <input type="text" name="nomCompetence" id="nomCompetence"> <br>
@@ -53,6 +54,7 @@ $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
             <input type="submit" name="b2" value="Supprimer la compétence"> <br>
         </p>
     </form>
+    </div>
 
 </body>
 <?php

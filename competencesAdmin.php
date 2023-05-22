@@ -19,6 +19,10 @@ $sql = "SELECT nom, nomCompetence from matieres JOIN competences ON matieres.idM
 $stmt = $bdd->prepare($sql);
 $stmt->execute();
 $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+session_start();
+
+// Enregistre le nom de la page précédente dans une variable de session
+$_SESSION['page_precedente'] = basename($_SERVER['PHP_SELF']);
 ?>
 
 <div style="overflow-x:auto;">

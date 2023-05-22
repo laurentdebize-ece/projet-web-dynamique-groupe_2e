@@ -3,8 +3,6 @@ session_start();
 
 include("connexionBDD.php");
 $utilisateur=$_SESSION['utilisateurs'];
-
-$nomC = isset($_POST["nomCompetence"]) ? $_POST["nomCompetence"] : "";
 $nomM = isset($_POST["nom"]) ? $_POST["nom"] : "";
 
 //on recupère l'id de la matière
@@ -14,24 +12,45 @@ $idMatiere->execute($p2);
 $idMatiereRow = $idMatiere->fetch(); 
 $idMatiereValue = $idMatiereRow['idMatiere'];
 
-//on recupère l'id de la competence
-$idCompetence=$bdd->prepare("SELECT idCompetence FROM  competences WHERE nomCompetence= :nomC");
-$p=array('nomC'=>$nomC);
-$idCompetence->execute($p);
-$idCompetenceeRow = $idCompetence->fetch(); 
-$idvaleurCompetence = $idCompetenceeRow['idCompetence'];
-
-    if (isset($_POST['b1']) && $_POST['b1'] === 'Ajouter la compétence') {
-        echo "test3" ;
+if (isset($_SESSION['page_precedente']) && $_SESSION['page_precedente'] == 'competencesAdmin.php'){ //on vérifie que la page précédente était competencesAdmin.php
+    $nomC = isset($_POST["nomCompetence"]) ? $_POST["nomCompetence"] : "";
+    
+    //on recupère l'id de la competence
+    $idCompetence=$bdd->prepare("SELECT idCompetence FROM  competences WHERE nomCompetence= :nomC");
+    $p=array('nomC'=>$nomC);
+    $idCompetence->execute($p);
+    $idCompetenceeRow = $idCompetence->fetch(); 
+    $idvaleurCompetence = $idCompetenceeRow['idCompetence'];
+    if (isset($_POST['b1']) && $_POST['b1'] === 'Ajouter la compétence') { //permet d'ajouter une competence à la base de donne
         $req=$bdd->prepare("INSERT INTO `competences` (`idCompetence`, `nomCompetence`, `idMatiere`, `idEval`, `idUtilisateur`) VALUES (NULL,:nomC,:idM,0,:idU)");
         $params = array( 'nomC'=> $nomC, 'idM'=>$idMatiereValue, 'idU'=>$utilisateur['idUtilisateur']);
         $req->execute($params);
         header("Location:competencesAdmin.php");
-    } else if(isset($_POST['b2']) && $_POST['b2'] === 'Supprimer la compétence') {
+    } else if(isset($_POST['b2']) && $_POST['b2'] === 'Supprimer la compétence') {//permet de supprimer une competence à la base de donne
         $req2=$bdd->prepare("DELETE FROM competences WHERE idCompetence= :idC AND idMatiere= :idM;");
         $param = array('idC'=>$idvaleurCompetence, 'idM'=>$idMatiereValue);
         $req2->execute($param);
         header("Location:competencesAdmin.php");
     }
+    
+} else if (isset($_SESSION['page_precedente']) && $_SESSION['page_precedente'] == 'matieresAdmin.php'){//on vérifie que la page précédente était matiereAdmin.php
+    echo "test1";
+    if(isset($_POST['button1']) && $_POST['button1'] === 'Ajouter la matière'){//permet d'ajouter une matière à la base de donne
+        echo"test2";
+        $nbHeures = isset($_POST["heures"]) ? $_POST["heures"] : "";
+        $req=$bdd->prepare("INSERT INTO `matieres` ( `idMatiere`,`nom`,`NbHeures` ) VALUES (NULL,:nomMatiere,:heuresMatiere)");
+        $params = array( 'nomMatiere'=> $nomM,'heuresMatiere'=>$nbHeures);
+        $req->execute($params);
+        header("Location:matieresAdmin.php");
+    }else if(isset($_POST['button2']) && $_POST['button2'] === 'Supprimer la matière'){//permet de supprimer une matière à la base de donne
+        $req2=$bdd->prepare("DELETE FROM matieres WHERE  idMatiere= :idM;");
+        $param = array( 'idM'=>$idMatiereValue);
+        $req2->execute($param);
+        header("Location:matieresAdmin.php");
+    }
+
+}
+// Réinitialise la variable de session pour éviter les conflits
+unset($_SESSION['page_precedente']);
 
 ?>

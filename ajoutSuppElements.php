@@ -81,14 +81,48 @@ if (isset($_SESSION['page_precedente']) && $_SESSION['page_precedente'] == 'comp
     $resultProf = $idProf->fetch(); 
     $valueIdProf = $resultProf['idProf'];
 
-    $relierPCM=$bdd->prepare("INSERT INTO `enseignement` ( `idClasse`,`idProf`,`idMatiere` ) VALUES (6,:idProf,:idMatiere)");
+    $relierPCM=$bdd->prepare("INSERT INTO `enseignement` ( `idClasse`,`idProf`,`idMatiere` ) VALUES (0,:idProf,:idMatiere)");
     $paramRelier=array('idProf'=>$valueIdProf,'idMatiere'=>$idMatiereValue);
     $relierPCM->execute($paramRelier);
     header("Location:profsAdmin.php");
+
     }else if(isset($_POST['button2']) && $_POST['button2'] === 'Supprimer professeur/e'){//permet de supprimer une matière à la base de donne
         /*
-        $req2=$bdd->prepare("DELETE FROM utilisateurs WHERE  mail= :mail;");
-        $param = array( 'mail'=>$mailProf);
+        $query=$bdd->prepare("SELECT mail FROM utilisateurs WHERE mail=:email");
+        $px=array('email'=>$mailProf);
+        $query->execute($px);
+        $queryRow=$query->fetch();
+        $queryValue=$queryRow['mail'];
+        */
+
+        //on récupère l'id du prof
+        $idUtilisateurProf=$bdd->prepare("SELECT idUtilisateur FROM utilisateurs WHERE mail= :mailProf ");
+        $paramIdU=array('mailProf'=>$mailProf);
+        $idUtilisateurProf->execute($paramIdU);
+        $result = $idUtilisateurProf->fetch(); 
+        $valeurIdUtilisateur = $result['idUtilisateur'];
+
+        $idProf=$bdd->prepare("SELECT idProf FROM profs WHERE idUtilisateur= :idU");
+        $pProf=array('idU'=>$valeurIdUtilisateur);
+        $idProf->execute($pProf);
+        $resultProf = $idProf->fetch(); 
+        $valueIdProf = $resultProf['idProf'];
+        //on supprime la ligne correspondant au prof dans la table enseignement
+        $suppDeEneignement=$bdd->prepare("DELETE FROM enseignement WHERE idProf=:id AND idMatiere =:idM");
+        $psuppDeEneignement=array('id'=>$valueIdProf,'idM'=>$idMatiereValue);
+        $suppDeEneignement->execute($psuppDeEneignement);
+        //on supprime la ligne correspondant au prof dans la table prof
+        $suppDeProf=$bdd->prepare("DELETE FROM profs WHERE profs.idProf=:idProf AND profs.idUtilisateur=:iduProf");
+        $psuppDeProf=array('idProf'=>$valueIdProf,'iduProf'=>$valeurIdUtilisateur);
+        $suppDeProf->execute($psuppDeProf);
+        //Enfin on surpprime le prof de la table utilisateur
+        $suppDeUtilisateur=$bdd->prepare("DELETE FROM utilisateurs WHERE idUtilisateur=:idU");
+        $psuppDeUtilisateur=array('idU'=>$valeurIdUtilisateur);
+        $suppDeUtilisateur->execute($psuppDeUtilisateur);
+        header("Location:profsAdmin.php");
+/*
+        $req2=$bdd->prepare("DELETE FROM utilisateurs WHERE  mail= :mail ");
+        $param = array( 'mail'=>$queryValue);
         $req2->execute($param);
         header("Location:profsAdmin.php");
         */

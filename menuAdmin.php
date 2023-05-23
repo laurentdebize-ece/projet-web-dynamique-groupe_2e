@@ -38,7 +38,6 @@
                     <a id="lastright" href="compteAdmin.php"> Mon compte </a>
                 </div>
             </div>
-        </div>
     </div>
     </nav>
     

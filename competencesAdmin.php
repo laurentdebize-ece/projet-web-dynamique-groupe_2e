@@ -19,6 +19,10 @@ $sql = "SELECT nom, nomCompetence from matieres JOIN competences ON matieres.idM
 $stmt = $bdd->prepare($sql);
 $stmt->execute();
 $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+session_start();
+
+// Enregistre le nom de la page précédente dans une variable de session
+$_SESSION['page_precedente'] = basename($_SERVER['PHP_SELF']);
 ?>
 
 <div style="overflow-x:auto;">
@@ -46,13 +50,12 @@ $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <div class="formModif">
     <form method="post" action="ajoutSuppElements.php">
         <p>
-        Modifier la base de données : <br>
-            <label for="prenom">Nom de la compétence : </label> 
-            <input type="text" name="nomCompetence" id="nomCompetence"> 
-            <label for="nom">Nom de la matière : </label> 
-            <input type="text" name="nom" id="nom"> 
-            <input type="submit" value="Ajouter la compétence"> 
-            <input type="submit" value="Supprimer la compétence"> 
+            <label for="prenom">Nom de la compétence : </label> <br>
+            <input type="text" name="nomCompetence" id="nomCompetence"> <br>
+            <label for="nom">Nom de la matière : </label> <br>
+            <input type="text" name="nom" id="nom"> <br>
+            <input type="submit" name="b1" value="Ajouter la compétence"> <br>
+            <input type="submit" name="b2" value="Supprimer la compétence"> <br>
         </p>
     </form>
     </div>

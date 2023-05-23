@@ -19,6 +19,10 @@ $sql = "SELECT * FROM matieres";
 $stmt = $bdd->prepare($sql);
 $stmt->execute();
 $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+session_start();
+
+// Enregistre le nom de la page précédente dans une variable de session
+$_SESSION['page_precedente'] = basename($_SERVER['PHP_SELF']);
 ?>
 
 <div style="overflow-x:auto;">
@@ -46,11 +50,12 @@ $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <div class="formModif">
         <form method="post" action="ajoutSuppElements.php">
             <p>
-                Modifier la base de données : <br>
-                <label for="nom">Nom de la matière : </label> 
-                <input type="text" name="nom" id="nom"> 
-                <input type="submit" value="Ajouter la matière"> 
-                <input type="submit" value="Supprimer la matière"> 
+                <label for="nom">Nom de la matière : </label> <br>
+                <input type="text" name="nom" id="nom"> <br>
+                <label for="nom">Nombres d'heures : </label> <br>
+                <input type="number" name="heures" id="heures"> <br>
+                <input type="submit" name="button1" value="Ajouter la matière"> 
+                <input type="submit" name="button2" value="Supprimer la matière"> 
             </p>
         </form>
     </div>

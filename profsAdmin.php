@@ -19,6 +19,8 @@ $sql = "SELECT * FROM utilisateurs WHERE rang=2";
 $stmt = $bdd->prepare($sql);
 $stmt->execute();
 $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+session_start();
+$_SESSION['page_precedente'] = basename($_SERVER['PHP_SELF']);
 ?>
 
 <div style="overflow-x:auto;">
@@ -49,13 +51,17 @@ $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <div class="formModif">
     <form method="post" action="ajoutSuppElements.php">
         <p>
-        Modifier la base de données : <br>
-            <label for="prenom">Nom prof : </label> 
-            <input type="text" name="nom" id="nom"> 
-            <label for="nom">Prénom prof : </label> 
-            <input type="text" name="prenom" id="prenom"> 
-            <input type="submit" value="Ajouter professeur/e"> 
-            <input type="submit" value="Supprimer professeur/e"> 
+         <br>
+            <label for="nom">Nom professeur : </label> <br>
+            <input type="text" name="nomProf" id="nomProf"> <br>
+            <label for="nom">Prénom professeur : </label> <br>
+            <input type="text" name="prenom" id="prenom"> <br>
+            <label for="nom">Mail professeur : </label> <br>
+            <input type="text" name="mailP" id="mailP"> <br>
+            <label for="nom">Nom de la matière enseigné : </label> <br>
+            <input type="text" name="nom" id="nom"> <br>
+            <input type="submit" name="button1" value="Ajouter professeur/e"> 
+            <input type="submit" name="button2" value="Supprimer professeur/e"> 
         </p>
     </form>
     </div>

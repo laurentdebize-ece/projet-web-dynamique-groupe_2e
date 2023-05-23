@@ -41,7 +41,23 @@ $idMatiere = $stmtMatiere->fetchColumn();
 
 ?>
 
+<p>Voir les compétences :</p>
+<form action="voirCompetencesProfs.php" method = "post">
+<input type="hidden" name ="matiere" value ="<?php echo $idMatiere; ?>" > <br>
+<label for="classe">Sélectionnez une classe :</label>
+        <select name="classe" id="classe">
+            <?php foreach ($classes as $classe) : ?>
+                <option value="<?php echo $classe['idClasse']; ?>"><?php echo $classe['nomClasse']; ?></option>
+            <?php endforeach; ?>
+        </select>
+        
+        <br>
 
+        <input type="submit" value="Voir les évaluations des compétences">
+
+</form>
+<br><br><br>
+<p>Ajouter une nouvelle compétence :</p>
 <form action="ajouterCompetencesProfs.php" method = "post">
 <input type="hidden" name ="matiere" value ="<?php echo $idMatiere; ?>" > <br>
 <label for="classe">Sélectionnez une classe :</label>
@@ -57,7 +73,7 @@ $idMatiere = $stmtMatiere->fetchColumn();
 
         <br>
 
-        <input type="submit" value="Valider">
+        <input type="submit" value="Ajouter la compétence">
 
 </form>
 

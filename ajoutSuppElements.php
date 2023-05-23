@@ -4,17 +4,13 @@ session_start();
 include("connexionBDD.php");
 $utilisateur=$_SESSION['utilisateurs'];
 $nomM = isset($_POST["nom"]) ? $_POST["nom"] : "";
+$idMatiereValue = isset($_POST["matiere"]) ? $_POST["matiere"] : "";
+
 
 
 
 if (isset($_SESSION['page_precedente']) && $_SESSION['page_precedente'] == 'competencesAdmin.php'){ //on vérifie que la page précédente était competencesAdmin.php
     $nomC = isset($_POST["nomCompetence"]) ? $_POST["nomCompetence"] : "";
-    //on recupère l'id de la matière
-    $idMatiere=$bdd->prepare("SELECT idMatiere FROM matieres WHERE nom= :nomM");
-    $p2=array('nomM'=>$nomM);
-    $idMatiere->execute($p2);
-    $idMatiereRow = $idMatiere->fetch(); 
-    $idMatiereValue = $idMatiereRow['idMatiere'];
     //on recupère l'id de la competence
     $idCompetence=$bdd->prepare("SELECT idCompetence FROM  competences WHERE nomCompetence= :nomC");
     $p=array('nomC'=>$nomC);
@@ -57,7 +53,9 @@ if (isset($_SESSION['page_precedente']) && $_SESSION['page_precedente'] == 'comp
 }else if (isset($_SESSION['page_precedente']) && $_SESSION['page_precedente'] == 'profsAdmin.php'){ //on vérifie que la page précédente était profsAdmin.php
     $nomProf = isset($_POST["nomProf"]) ? $_POST["nomProf"] : "";
     $prenomProf = isset($_POST["prenom"]) ? $_POST["prenom"] : "";
-    $mailProf = isset($_POST["mailP"]) ? $_POST["mailP"] : "";    
+    $mailProf = isset($_POST["mailP"]) ? $_POST["mailP"] : ""; 
+    $idMatiereValue = isset($_POST["matiere"]) ? $_POST["matiere"] : "";
+   
     if(isset($_POST['button1']) && $_POST['button1'] === 'Ajouter professeur/e'){//permet d'ajouter une matière à la base de donne
         //on ajoute un nouvel utilisateur étant un prof dans la table utilisateur
         $req=$bdd->prepare("INSERT INTO `utilisateurs` ( `idUtilisateur`,`prenom`,`nom`,`mdp`,`rang`,`mail` ) VALUES (NULL,:prenomProf,:nomProf,'',2,:mail)");
@@ -75,12 +73,7 @@ if (isset($_SESSION['page_precedente']) && $_SESSION['page_precedente'] == 'comp
         $insert->execute($param2);
 
         // on relie le prof à la matière qu'il enseigne 
-        //on recupère l'id de la matière
-    $idMatiere=$bdd->prepare("SELECT idMatiere FROM matieres WHERE nom= :nomM");
-    $p2=array('nomM'=>$nomM);
-    $idMatiere->execute($p2);
-    $idMatiereRow = $idMatiere->fetch(); 
-    $idMatiereValue = $idMatiereRow['idMatiere'];
+         
 
     $idProf=$bdd->prepare("SELECT idProf FROM profs WHERE idUtilisateur= :idU");
     $pProf=array('idU'=>$valeurIdUtilisateur);
@@ -88,7 +81,7 @@ if (isset($_SESSION['page_precedente']) && $_SESSION['page_precedente'] == 'comp
     $resultProf = $idProf->fetch(); 
     $valueIdProf = $resultProf['idProf'];
 
-    $relierPCM=$bdd->prepare("INSERT INTO `enseignement` ( `idClasse`,`idProf`,`idMatiere` ) VALUES (0,:idProf,:idMatiere)");
+    $relierPCM=$bdd->prepare("INSERT INTO `enseignement` ( `idClasse`,`idProf`,`idMatiere` ) VALUES (6,:idProf,:idMatiere)");
     $paramRelier=array('idProf'=>$valueIdProf,'idMatiere'=>$idMatiereValue);
     $relierPCM->execute($paramRelier);
     header("Location:profsAdmin.php");

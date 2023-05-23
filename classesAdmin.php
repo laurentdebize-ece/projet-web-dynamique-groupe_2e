@@ -89,7 +89,8 @@ $idMatiere = $stmtMatiere->fetchAll(PDO::FETCH_ASSOC);
                     <option value="<?php echo $p['idPromo']; ?>"><?php echo $p['nomPromo']; ?></option>
                 <?php endforeach; ?>
             </select>
-                <input type="submit" value="Ajouter la classe"> 
+                <input type="submit" name="ajoutClasse" value="Ajouter la classe"> 
+                <input type="submit" name="SuppClasse" value="Supprimer la classe"> 
             </p>
         </form>
         </div>
@@ -130,7 +131,8 @@ $idMatiere = $stmtMatiere->fetchAll(PDO::FETCH_ASSOC);
                     <option value="<?php echo $e['idEcole']; ?>"><?php echo $e['NomEcole']; ?></option>
                 <?php endforeach; ?>
             </select>
-                <input type="submit" value="Ajouter la promo"> 
+                <input type="submit" name="AjoutPromo" value="Ajouter la promo"> 
+                <input type="submit" name="SuppPromo" value="Supprimer la promo"> 
             </p>
         </form>
             </div>
@@ -141,7 +143,16 @@ $idMatiere = $stmtMatiere->fetchAll(PDO::FETCH_ASSOC);
             <p>
                 <label for="prenom">Nom de l'école : </label> 
                 <input type="text" name="nomEcole" id="nomEcole"> 
-                <input type="submit" value="Ajouter l'école"> 
+                <input type="submit" name="ajoutEcole" value="Ajouter l'école"> 
+
+                <label for="classe">Sélectionnez l'école à supprimer :</label>
+            <select name="ecole" id="ecole">
+                <?php foreach ($ecole as $e) : ?>
+                    <option value="<?php echo $e['idEcole']; ?>"><?php echo $e['NomEcole']; ?></option>
+                <?php endforeach; ?>
+                <input type="submit" name="suppEcole" value="Supprimer Ecole"> 
+
+            </select>
             </p>
         </form>
         </div>
@@ -152,7 +163,6 @@ $idMatiere = $stmtMatiere->fetchAll(PDO::FETCH_ASSOC);
 
 <?php
 include 'footer.php';
-//            <input type="hidden" name ="if" value = "1">
 
 ?>
 </html>

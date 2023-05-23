@@ -41,7 +41,7 @@ $idMatiere = $stmtMatiere->fetchColumn();
 
 ?>
 <div class="container2">
-    <p>Voir les compétences :</p><br>
+    <p>Voir les compétences des élèves:</p><br>
     <form action="voirCompetencesProfs.php" method = "post">
     <input type="hidden" name ="matiere" value ="<?php echo $idMatiere; ?>" > <br>
     <label for="classe">Sélectionnez une classe :</label>
@@ -49,6 +49,8 @@ $idMatiere = $stmtMatiere->fetchColumn();
                 <?php foreach ($classes as $classe) : ?>
                     <option value="<?php echo $classe['idClasse']; ?>"><?php echo $classe['nomClasse']; ?></option>
                 <?php endforeach; ?>
+                <label for="nom">Nom de la compétence : </label> <br>
+                <input type="text" name="nom" id="nom"> <br>
             </select>
             
             <br>

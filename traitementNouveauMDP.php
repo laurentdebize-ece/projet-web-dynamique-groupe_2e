@@ -26,10 +26,11 @@ if ($erreur == "") {
         $num_rows_affected = $req->rowCount();
         if ($num_rows_affected > 0) {
             if($utilisateur["rang"]==1){
-                echo "la scol";
+                header("Location:accueilAdmin.php");
+                exit();
             }
             else if($utilisateur["rang"]==2){
-                header("Location:accueilProf.php");
+                header("Location:accueilProfs.php");
                 exit();
             }
             else if($utilisateur["rang"]==3){

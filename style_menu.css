@@ -8,6 +8,7 @@ nav{
   background-color: white;
   position: sticky;
   top: 0px;
+  margin-bottom: 2%;
 }
 
 nav a{
@@ -41,12 +42,15 @@ h1 {
   text-align: center;
   color: #fff;
   text-shadow: 4px 4px 8px rgba(0, 0, 0, 0,2);
-  margin-top: 10px;
   transition: background-color 0.5s ease;
   padding: 20px;
   background-color: #190039;
   border-top: 10px solid #190039;
   border-bottom: 10px solid #190039;
+  text-decoration: none;
+}
+
+a h1{
   text-decoration: none;
 }
 
@@ -93,7 +97,9 @@ h1:hover {
     color: white;
   }
 
-  tr:nth-child(even) {background-color: #f2f2f2;}
+  tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
 
   form {
     overflow: auto;
@@ -105,12 +111,13 @@ h1:hover {
   input[type=text] {
     border: none;
     border-bottom: 2px solid #190039;
-    color: white;
+    color: black;
   }
 
   input[type=text]:focus {
     outline: none;
     padding: 4px 5px;
+    color: white;
     background-color: #190039;
     margin: 4px 2px;
   }
@@ -126,13 +133,55 @@ h1:hover {
   }
 
   .formModif {
+    margin-bottom: 5%;
     margin-left: 5%;
     margin-right: 5%;
     margin-top: 2%;
-    margin-bottom: 21%;
   }
 
   p .infoCompte {
     margin-left: 50%;
     margin-right: auto;
+  }
+
+  .container1 {
+    display: flex;
+    margin-top: 7%;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .container2 {
+    display: flex;
+    margin-top: 7%;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 17%;
+  }
+  
+  #btnCompte {
+    background-color: #190039;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+  }
+
+  #paragrapheIntro {
+    text-align: center;
+    padding-top: 10%;
+    padding-left: 10px;
+    margin-bottom: 20%;
+  }
+
+  ul {
+    padding: 20px;
+    list-style-type: square;
+  }
+
+  ul li {
+    margin: 5px;
   }

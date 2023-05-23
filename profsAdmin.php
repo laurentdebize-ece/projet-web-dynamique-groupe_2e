@@ -21,6 +21,11 @@ $stmt->execute();
 $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 session_start();
 $_SESSION['page_precedente'] = basename($_SERVER['PHP_SELF']);
+
+$sqlMatiere = "SELECT idMatiere, nom FROM matieres";
+$stmtMatiere = $bdd->prepare($sqlMatiere);
+$stmtMatiere->execute();
+$idMatiere = $stmtMatiere->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 <div style="overflow-x:auto;">
@@ -58,8 +63,12 @@ $_SESSION['page_precedente'] = basename($_SERVER['PHP_SELF']);
             <input type="text" name="prenom" id="prenom"> <br>
             <label for="nom">Mail professeur : </label> <br>
             <input type="text" name="mailP" id="mailP"> <br>
-            <label for="nom">Nom de la matière enseigné : </label> <br>
-            <input type="text" name="nom" id="nom"> <br>
+            <label for="prenom">Matière enseignée : : </label> 
+            <select name="matiere" id="matiere">
+            <?php foreach ($idMatiere as $m) : ?>
+                <option value="<?php echo $m['idMatiere']; ?>"><?php echo $m['nom']; ?></option>
+            <?php endforeach; ?>
+        </select>
             <input type="submit" name="button1" value="Ajouter professeur/e"> 
             <input type="submit" name="button2" value="Supprimer professeur/e"> 
         </p>

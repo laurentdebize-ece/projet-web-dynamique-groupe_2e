@@ -2,10 +2,8 @@
 include("connexionBDD.php");
 session_start();
 
-// Récupérer l'id utilisateur à partir de la session
 $utilisateur = isset($_SESSION['utilisateurs']) ? $_SESSION['utilisateurs'] : null;
 
-// Récupérer la matière sélectionnée
 $matiere = isset($_POST["matiere"]) ? $_POST["matiere"] : "";
 
 $erreur = "";
@@ -20,7 +18,7 @@ if ($utilisateur == null) {
 if ($erreur != "") {
     echo "Erreur: <br>" . $erreur;
 } else {
-    // Récupérer toutes les compétences associées à la matière et à l'utilisateur dans la base de données
+    // on récupére toutes les compétences associées à la matière et à l'utilisateur
     $sql = "SELECT * FROM competences WHERE idMatiere = :matiere AND idUtilisateur = :idUtilisateur";
     $stmt = $bdd->prepare($sql);
     $stmt->bindParam(':matiere', $matiere);

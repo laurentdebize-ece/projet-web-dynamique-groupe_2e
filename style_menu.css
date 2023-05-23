@@ -93,7 +93,9 @@ h1:hover {
     color: white;
   }
 
-  tr:nth-child(even) {background-color: #f2f2f2;}
+  tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
 
   form {
     overflow: auto;
@@ -105,12 +107,13 @@ h1:hover {
   input[type=text] {
     border: none;
     border-bottom: 2px solid #190039;
-    color: white;
+    color: black;
   }
 
   input[type=text]:focus {
     outline: none;
     padding: 4px 5px;
+    color: white;
     background-color: #190039;
     margin: 4px 2px;
   }
@@ -135,4 +138,29 @@ h1:hover {
   p .infoCompte {
     margin-left: 50%;
     margin-right: auto;
+  }
+
+  .container1 {
+    display: flex;
+    margin-top: 7%;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #btnCompte {
+    background-color: #190039;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+  }
+
+  #paragrapheIntro {
+    text-align: center;
+    padding-top: 10%;
+    padding-left: 10px;
+    margin-bottom: 20%;
   }

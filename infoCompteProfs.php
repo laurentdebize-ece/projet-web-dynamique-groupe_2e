@@ -15,25 +15,29 @@
     include("connexionBDD.php");
     $utilisateur=$_SESSION['utilisateurs'];
     ?>
-    <table>
-        <tr>
-            <th>Nom</th>
-            <th>Prénom</th>
-            <th>E-mail</th>
-        </tr>
-        <tr>
-            <td>
-            <?php echo $utilisateur['nom']; ?>
-            </td>
-            <td>
-            <?php echo $utilisateur['prenom']; ?>
-            </td>
-            <td>
-            <?php echo $utilisateur['mail']; ?>
-            </td>
-        </tr>
-    </table>
-    <button id="retour" onclick="window.location.href='compteProfs.php'">Retour </button>
+    <div class="container1">
+        <table>
+            <tr>
+                <th>Nom</th>
+                <th>Prénom</th>
+                <th>E-mail</th>
+            </tr>
+            <tr>
+                <td>
+                <?php echo $utilisateur['nom']; ?>
+                </td>
+                <td>
+                <?php echo $utilisateur['prenom']; ?>
+                </td>
+                <td>
+                <?php echo $utilisateur['mail']; ?>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="container1">
+        <button id="retour" onclick="window.location.href='compteProfs.php'">Retour </button>
+    </div>
 </body>
 <?php
 include 'footer.php';

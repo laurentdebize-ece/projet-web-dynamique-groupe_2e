@@ -11,18 +11,33 @@
 <body> 
     <?php
     include 'menuInfosCompte.php';
-
     session_start();
     include("connexionBDD.php");
     $utilisateur=$_SESSION['utilisateurs'];
     ?>
-    <p class="infoCompte">
-        Nom: <?php echo $utilisateur['nom']; ?><br>
-        Prenom: <?php echo $utilisateur['prenom']; ?><br>
-        E-mail: <?php echo $utilisateur['mail']; ?><br>
-    </p>
-    <button onclick="window.location.href='compteAdmin.php'">Retour </button>
-
+    <div class="container1">
+        <table>
+            <tr>
+                <th>Nom</th>
+                <th>Prénom</th>
+                <th>E-mail</th>
+            </tr>
+            <tr>
+                <td>
+                <?php echo $utilisateur['nom']; ?>
+                </td>
+                <td>
+                <?php echo $utilisateur['prenom']; ?>
+                </td>
+                <td>
+                <?php echo $utilisateur['mail']; ?>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="container1">
+        <button id="retour" onclick="window.location.href='compteAdmin.php'">Retour </button>
+    </div>
 </body>
 <?php
 include 'footer.php';

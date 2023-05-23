@@ -17,10 +17,11 @@
  $utilisateur=$_SESSION['utilisateurs'];
  ?>
 
-<button onclick="window.location.href='infoCompteProfs.php'">Information du compte</button> <br>
-<button onclick="window.location.href='modifierMdp.php'">Modifier votre Mot de passe</button><br>
-<button onclick="window.location.href='deconnexion.php'">Deconnexion</button>
-
+<div class="container1">
+    <button id="btnCompte" onclick="window.location.href='infoCompteProfs.php'">Information du compte</button> <br>
+    <button id="btnCompte" onclick="window.location.href='modifierMdp.php'">Modifier votre Mot de passe</button><br>
+    <button id="btnCompte" onclick="window.location.href='deconnexion.php'">Deconnexion</button>
+</div>
 
 <?php
 include 'footer.php';

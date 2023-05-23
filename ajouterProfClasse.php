@@ -13,17 +13,22 @@
  include 'menuAdmin.php';
  include 'connexionBDD.php';
 
- $idProf = isset($_POST["prof"]) ? $_POST["prof"] : "";
+ $idUtilisateur = isset($_POST["prof"]) ? $_POST["prof"] : "";
  $idClasse = isset($_POST["ecole"]) ? $_POST["ecole"] : "";
+$idMatiere = isset($_POST["matiere"]) ? $_POST["matiere"] : "";
 
- $sql = "SELECT matieres.idMatiere
-        FROM matieres
-        JOIN enseignement ON matieres.idMatiere = enseignement.idMatiere
-        WHERE enseignement.idProf = :idProf";
+
+
+$sql = "SELECT profs.idProf
+        FROM profs
+        JOIN utilisateurs ON profs.idUtilisateur = utilisateurs.idUtilisateur
+        WHERE utilisateurs.idUtilisateur = :idUtilisateur";
+
 $stmt = $bdd->prepare($sql);
-$stmt->bindParam(':idProf', $idProf);
+$stmt->bindParam(':idUtilisateur', $idUtilisateur);
 $stmt->execute();
-$idMatiere = $stmt->fetchColumn();
+$row = $stmt->fetch(PDO::FETCH_ASSOC);
+$idProf = $row['idProf'];
 
 
 

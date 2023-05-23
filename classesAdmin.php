@@ -35,6 +35,11 @@ ON utilisateurs.idUtilisateur = profs.idUtilisateur";
 $stmtProf = $bdd->prepare($sqlProf);
 $stmtProf->execute();
 $prof = $stmtProf->fetchAll(PDO::FETCH_ASSOC);
+
+$sqlMatiere = "SELECT idMatiere, nom FROM matieres";
+$stmtMatiere = $bdd->prepare($sqlMatiere);
+$stmtMatiere->execute();
+$idMatiere = $stmtMatiere->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 
@@ -100,6 +105,12 @@ $prof = $stmtProf->fetchAll(PDO::FETCH_ASSOC);
             <select name="prof" id="prof">
             <?php foreach ($prof as $p) : ?>
                 <option value="<?php echo $p['idUtilisateur']; ?>"><?php echo $p['nom']; ?></option>
+            <?php endforeach; ?>
+        </select>
+        <label for="prenom">Matière enseignée : : </label> 
+            <select name="matiere" id="matiere">
+            <?php foreach ($idMatiere as $m) : ?>
+                <option value="<?php echo $m['idMatiere']; ?>"><?php echo $m['nom']; ?></option>
             <?php endforeach; ?>
         </select>
         <label for="classe">Sélectionnez une classe :</label>

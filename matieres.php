@@ -27,9 +27,9 @@
     ?>
     <div id="scrollcontainer">
         <div id="containertrue">
-            <form action="evaluer.php" method="POST">
+            <form action="competences.php" method="POST">
                 <?php foreach ($result as $r) : ?>
-                    <button type="submit" class="Matiere" id="<?php echo $r['idMatiere']; ?>">
+                    <button type="submit" name="matiere" class="Matiere" value="<?php echo $r['idMatiere']; ?>">
                         <p><?php echo $r['nom']; ?></p>
                     </button>
                 <?php endforeach; ?>

@@ -36,7 +36,7 @@ $classes = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 
-<form action="voirCompetencesProfs.php" method = "post">
+<form action="afficherClassesProfs.php" method = "post">
 <label for="classe">Sélectionnez une classe :</label>
         <select name="classe" id="classe">
             <?php foreach ($classes as $classe) : ?>

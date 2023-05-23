@@ -19,7 +19,7 @@ if($utilisateur['mdp']==$mdpExistant){
         exit();
     }
     else if($utilisateur["rang"]==2){
-        header("Location:accueilProf.php");
+        header("Location:accueilProfs.php");
         exit();
     }
     else if($utilisateur["rang"]==3){

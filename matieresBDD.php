@@ -10,21 +10,4 @@ $sql = $bdd->prepare("SELECT matieres.nom FROM matieres JOIN enseignement ON ens
 $sql->execute();
 $result = $sql->fetchAll(PDO::FETCH_ASSOC);
 
-
-
-echo "<ul>";
-
-foreach ($result as $row) {
-    $matiere_id = $row['idMatiere'];
-    $matiere_nom = $row['nom'];
-
-    echo "<li>$matiere_nom ";
-
-    
-}
-
-
-echo "</ul>";
-
-
 ?>

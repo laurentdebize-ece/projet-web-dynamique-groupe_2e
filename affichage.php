@@ -51,7 +51,7 @@
           break;
     case "compteAdmin.php":
           $titre = "Mon compte";
-          break; 
+          break;
     case "envoiEvalBDD.php":
         $titre = "Confirmation enregistrement";
         break;
@@ -59,6 +59,15 @@
           $titre = "Accueil";
           break; 
       case "compteProfs.php":
+          $titre = "Mon compte";
+          break;
+      case "InfosCompteProfs.php":
+          $titre = "Mon compte";
+          break;
+      case "InfosCompte.php":
+          $titre = "Mon compte";
+          break;
+      case "InfosCompteAdmin.php":
           $titre = "Mon compte";
           break;
       case "classesProfs.php":

@@ -6,9 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="style_menu.css">
     <link rel="stylesheet" type="text/css" href="style_footer.css">
-
-
-    <title>Document</title>
+    <title>OMNESmySKILLS</title>
 </head>
 <body>
 <?php

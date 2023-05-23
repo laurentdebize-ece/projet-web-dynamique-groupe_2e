@@ -14,6 +14,9 @@
 <?php
  include 'menu.php';
  ?>
+ <?php
+ include 'toutes competencesBDD.php';
+ ?>
 
 <?php
 include 'footer.php';

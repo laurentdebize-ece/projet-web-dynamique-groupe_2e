@@ -42,10 +42,6 @@ $stmtMatiere->execute();
 $idMatiere = $stmtMatiere->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
-
-
-
-
 <div style="overflow-x:auto;">
 <table>
         <tr>
@@ -79,76 +75,77 @@ $idMatiere = $stmtMatiere->fetchAll(PDO::FETCH_ASSOC);
     $promo = $stmtPromo->fetchAll(PDO::FETCH_ASSOC);
     ?>
 
-    <div class="formModif">
-    <form method="post" action="ajouterClasse.php">
-        <p>
-        Modifier la base de données : <br>
-            <label for="prenom">Nom de la classe : </label> 
-            <input type="text" name="nomClasse" id="nomClasse"> 
-            <label for="classe">Sélectionnez une promo :</label>
+<div class="container1">
+        <div>
+        <form method="post" action="ajouterClasse.php">
+            <p>
+            Modifier la base de données : <br>
+                <label for="prenom">Nom de la classe : </label> 
+                <input type="text" name="nomClasse" id="nomClasse"> 
+                <label for="classe">Sélectionnez une promo :</label>
+    
+            <select name="promo" id="promo">
+                <?php foreach ($promo as $p) : ?>
+                    <option value="<?php echo $p['idPromo']; ?>"><?php echo $p['nomPromo']; ?></option>
+                <?php endforeach; ?>
+            </select>
+                <input type="submit" value="Ajouter la classe"> 
+            </p>
+        </form>
+        </div>
+        <div>
+        <form method="post" action="ajouterProfClasse.php">
+            <p>
+                <label for="prenom">Nom du professeur : </label> 
+                <select name="prof" id="prof">
+                <?php foreach ($prof as $p) : ?>
+                    <option value="<?php echo $p['idUtilisateur']; ?>"><?php echo $p['nom']; ?></option>
+                <?php endforeach; ?>
+            </select>
+            <label for="prenom">Matière enseignée : </label> 
+                <select name="matiere" id="matiere">
+                <?php foreach ($idMatiere as $m) : ?>
+                    <option value="<?php echo $m['idMatiere']; ?>"><?php echo $m['nom']; ?></option>
+                <?php endforeach; ?>
+            </select>
+            <label for="classe">Sélectionnez une classe :</label>
+            <select name="ecole" id="ecole">
+                <?php foreach ($classe as $c) : ?>
+                    <option value="<?php echo $c['idClasse']; ?>"><?php echo $c['nomClasse']; ?></option>
+                <?php endforeach; ?>
+            </select>
+                <input type="submit" value="Ajouter le professeur à la classe"> 
+            </p>
+        </form>
+                </div>
+        <br>
+        <div>
+        <form method="post" action="ajouterPromo.php">
+            <p>
+                <label for="prenom">Nom de la promo : </label> 
+                <input type="text" name="nomPromo" id="nomPromo"> 
+                <label for="classe">Sélectionnez une école :</label>
+            <select name="ecole" id="ecole">
+                <?php foreach ($ecole as $e) : ?>
+                    <option value="<?php echo $e['idEcole']; ?>"><?php echo $e['NomEcole']; ?></option>
+                <?php endforeach; ?>
+            </select>
+                <input type="submit" value="Ajouter la promo"> 
+            </p>
+        </form>
+            </div>
+    <br>
+</div>
+        <div class="formModif">
+        <form method="post" action="ajouterEcole.php">
+            <p>
+                <label for="prenom">Nom de l'école : </label> 
+                <input type="text" name="nomEcole" id="nomEcole"> 
+                <input type="submit" value="Ajouter l'école"> 
+            </p>
+        </form>
+        </div>
 
-        <select name="promo" id="promo">
-            <?php foreach ($promo as $p) : ?>
-                <option value="<?php echo $p['idPromo']; ?>"><?php echo $p['nomPromo']; ?></option>
-            <?php endforeach; ?>
-        </select>
-            <input type="submit" value="Ajouter la classe"> 
-        </p>
-    </form>
-    </div>
-
-
-    <div class="formModif">
-    <form method="post" action="ajouterProfClasse.php">
-        <p>
-            <label for="prenom">Nom du professeur : </label> 
-            <select name="prof" id="prof">
-            <?php foreach ($prof as $p) : ?>
-                <option value="<?php echo $p['idUtilisateur']; ?>"><?php echo $p['nom']; ?></option>
-            <?php endforeach; ?>
-        </select>
-        <label for="prenom">Matière enseignée : : </label> 
-            <select name="matiere" id="matiere">
-            <?php foreach ($idMatiere as $m) : ?>
-                <option value="<?php echo $m['idMatiere']; ?>"><?php echo $m['nom']; ?></option>
-            <?php endforeach; ?>
-        </select>
-        <label for="classe">Sélectionnez une classe :</label>
-        <select name="ecole" id="ecole">
-            <?php foreach ($classe as $c) : ?>
-                <option value="<?php echo $c['idClasse']; ?>"><?php echo $c['nomClasse']; ?></option>
-            <?php endforeach; ?>
-        </select>
-            <input type="submit" value="Ajouter le professeur à la classe"> 
-        </p>
-    </form>
-
-
-
-    <div class="formModif">
-    <form method="post" action="ajouterPromo.php">
-        <p>
-            <label for="prenom">Nom de la promo : </label> 
-            <input type="text" name="nomPromo" id="nomPromo"> 
-            <label for="classe">Sélectionnez une école :</label>
-        <select name="ecole" id="ecole">
-            <?php foreach ($ecole as $e) : ?>
-                <option value="<?php echo $e['idEcole']; ?>"><?php echo $e['NomEcole']; ?></option>
-            <?php endforeach; ?>
-        </select>
-            <input type="submit" value="Ajouter la promo"> 
-        </p>
-    </form>
-
-    <div class="formModif">
-    <form method="post" action="ajouterEcole.php">
-        <p>
-            <label for="prenom">Nom de l'école : </label> 
-            <input type="text" name="nomEcole" id="nomEcole"> 
-            <input type="submit" value="Ajouter l'école"> 
-        </p>
-    </form>
-    </div>
     </body>
 
 

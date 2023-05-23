@@ -129,10 +129,10 @@ h1:hover {
   }
 
   .formModif {
+    margin-bottom: 5%;
     margin-left: 5%;
     margin-right: 5%;
     margin-top: 2%;
-    margin-bottom: 21%;
   }
 
   p .infoCompte {
@@ -147,6 +147,14 @@ h1:hover {
     align-items: center;
   }
 
+  .container2 {
+    display: flex;
+    margin-top: 7%;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 17%;
+  }
+  
   #btnCompte {
     background-color: #190039;
     border: none;
@@ -163,4 +171,13 @@ h1:hover {
     padding-top: 10%;
     padding-left: 10px;
     margin-bottom: 20%;
+  }
+
+  ul {
+    padding: 20px;
+    list-style-type: square;
+  }
+
+  ul li {
+    margin: 5px;
   }

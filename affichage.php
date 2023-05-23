@@ -32,7 +32,7 @@
         $titre = "Compétences transverses";
         break;
     case "toutes competences.php":
-        $titre = "Toutes mes compétences";
+        $titre = "Toutes les compétences";
         break;
     case "evaluer.php":
           $titre = "Evaluer mes compétences";
